@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        a {
+            font-weight: bold;
+            color: #FFFEFD;
+            text-decoration: none;
+            background: #013D86;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+        a:hover {
+            background: #fff;
+            color: #013D86;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: none;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #013D86;
+            color: #fff;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        h1 a {
+            background:none;
+            color:#013D86;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+        td {
+            text-align: center;
+        }
+        p {
+            margin: 0;
+        }
+        p+p {
+            margin-top: 10px;
+        }
+        .blue-background {
+            background-color:#013D86; 
+            color: white; 
+            padding: 10px;
+        }
+        .table-row:hover {
+            transform: scale(1.02);
+            transition: transform 0.25s;
+        }
+        .white-background{
+            background-color:#FFFEFD;
+        }
+        .expand-on-hover {
+            transition: all 0.2s ease;
+        }
+        .expand-on-hover:hover {
+            transform: scale(1.1);
+        }
+        .kongbai{
+            font-weight: bold;
+            color:#000000;
+            text-decoration: none;
+            font-size: 20px;
+            background:no-repeat;
+            border-radius: 0px;
+        }
+        .kongbai:hover{
+            background:no-repeat;
+            color: #013D86;
+        }
+        .banner-container{
+            width:1400px;
+            height:350px;
+            margin:1rem auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .banner-container .banner-img-container {
+            width:8400px;
+            height:350px;
+            overflow: hidden;
+            position: absolute;
+            display: flex;
+            animation: run 25s ease infinite;
+        }
+        .banner-container .banner-img-container img{
+            width:1400px;
+            height:100%;
+        }
+        @keyframes run {
+            0%,10%{
+                transform: translateX(0);
+            }
+            16.7%,26.7%{
+                transform: translateX(-1400px);
+            }
+            33.4%,43.4%{
+                transform: translateX(-2800px);
+            }
+            50.1%,60.1%{
+                transform: translateX(-4200px);
+            }
+            66.8%,76.8%{
+                transform: translateX(-5600px);
+            }
+            83.5%,93.5%{
+                transform: translateX(-7000px);
+            }
+            100%{
+                transform: translateX(0);
+            }
+        }
+        nav {
+            background-color: #013D86;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+        nav ul li {
+            margin-right: 20px;
+            line-height: 2;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #FFFEFD;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #013D86;
+        }
+        .submenu {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 1001;
+        }
+        .submenu li {
+            margin-bottom: 3px;
+        }
+        .submenu li a {
+            color:#013D86;
+            background-color: #FFFEFD
+        }
+        .submenu li a:hover {
+            color:#92DFFF;
+        }
+        nav ul li:hover .submenu {
+            display: block;
+        }
+        .last table a{
+            background-color: #F3F4F8;
+            color: #000000;
+            font-size: 15px;
+            font-weight: normal;
+            transition: transform 0.3s ease;
+            display: inline-block;
+            padding: 0px;
+            text-decoration: none;
+        }
+        .last table a:hover{
+            transform: translateX(15px);
+            color: #013D86;
+        }
+        .last td{
+            text-align: left;
+            padding-left: 50px;
+        }
+        .vertical-line {
+            border-left: 1px solid black;
+            height: 100px; 
+            margin: 0 20px; 
+        }
+        .fixed-button1 {
+            position: fixed;
+            bottom: 20px; 
+            right: 20px; 
+            background-color:#013D86; 
+            color: #fff; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            text-decoration: none; 
+            transition: background-color 0.3s ease; 
+            z-index: 1000; 
+        }
+        .fixed-button1:hover {
+            background-color:#FFFEFD; 
+        }
+        .fixed-button2:hover {
+            background-color:#FFFEFD; 
+        }
+        .fixed-button2 {
+            position: fixed;
+            bottom: 80px; 
+            right: 20px; 
+            background-color:#013D86; 
+            color: #fff; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            text-decoration: none; 
+            transition: background-color 0.3s ease; 
+            z-index: 1000; 
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>厦门大学管理学院</title>
+</head>
+<body background="image/屏幕截图 2024-03-13 085319.png">
+	<a href="#top" class="fixed-button2" style="font-size: 40px;padding: 15px; padding-top: 0px ;padding-bottom: 0px">⬆</a>
+	<a href="#bottom" class="fixed-button1" style="font-size: 40px;padding: 15px; padding-top: 0px ;padding-bottom: 0px">⬇</a>
+    <table id="top">
+        <tr>
+			<td colspan="3" bgcolor="#013D86">
+				<table>
+					<tr>
+						<td><img src="image/logo.png" alt=""></td>
+						<td><nav>
+								<ul>
+									<li><a href="https://www.xmu.edu.cn/" target="_blank">厦大官网</a>
+										<ul class="submenu">
+											<li><a href="https://www.xmu.edu.cn/" target="_blank">厦门大学官网</a></li>
+											<li><a href="https://sm.xmu.edu.cn/" target="_blank">管理学院官网</a></li>
+										</ul>
+									</li>
+									<li><a href="#">学生直通</a>
+										<ul class="submenu">
+											<li><a href="https://i.xmu.edu.cn/" target="_blank">厦门大学信息门户</a></li>
+											<li><a href="https://jw.xmu.edu.cn/" target="_blank">厦门大学教务系统</a></li>
+											<li><a href="http://xk.xmu.edu.cn/" target="_blank">厦门大学选课系统</a></li>
+											<li><a href="http://course.xmu.edu.cn/" target="_blank">厦门大学课程中心</a></li>
+											<li><a href="https://l.xmu.edu.cn/" target="_blank">厦门大学spoc平台</a></li>
+											<li><a href="https://xmuxg.xmu.edu.cn/" target="_blank">厦门大学应用系统</a></li>
+											<li><a href="https://www.icourse163.org/" target="_blank">中国大学慕课mooc</a></li>
+											<li><a href="https://pintia.cn/" target="_blank">PTA</a></li>
+											<li><a href="https://www.cnki.net/" target="_blank">中国知网</a></li>
+										</ul>
+									</li>
+									<li><a href="https://sm.xmu.edu.cn/jxxm.htm" target="_blank">教学项目</a>
+										<ul class="submenu">
+											<li><a href="https://sm.xmu.edu.cn/jxxm/bk/xmgk.htm" target="_blank">本科</a></li>
+											<li><a href="https://sm.xmu.edu.cn/jxxm/xs/xmgk.htm" target="_blank">学硕</a></li>
+											<li><a href="https://sm.xmu.edu.cn/jxxm/bs/xmgk.htm" target="_blank">博士</a></li>
+											<li><a href="https://mba.xmu.edu.cn/" target="_blank">MBA</a></li>
+											<li><a href="https://emba.xmu.edu.cn/" target="_blank">EMBA</a></li>
+											<li><a href="https://edp.xmu.edu.cn/" target="_blank">EDP</a></li>
+											<li><a href="https://sm.xmu.edu.cn/jxxm/MPAcc/xwzx.htm" target="_blank">MPAcc</a></li>
+											<li><a href="https://sm.xmu.edu.cn/jxxm/MAud/xwzx.htm" target="_blank">MAud</a></li>
+											<li><a href="https://sm.xmu.edu.cn/jxxm/MEM/xwzx.htm" target="_blank">MEM</a></li>
+											<li><a href="https://sm.xmu.edu.cn/jxxm/MTA/xwzx.htm" target="_blank">MTA</a></li>
+										</ul>
+									</li>
+									<li><a href="https://sm.xmu.edu.cn/xueyuanxx.htm">学院信息</a>
+										<ul class="submenu">
+											<li><a href="https://sm.xmu.edu.cn/xueyuanxx/xyxw.htm" target="_blank">学院新闻</a></li>
+											<li><a href="https://sm.xmu.edu.cn/xueyuanxx/zsxx.htm" target="_blank">招生信息</a></li>
+											<li><a href="https://sm.xmu.edu.cn/xueyuanxx/jwxx.htm" target="_blank">教务信息</a></li>
+											<li><a href="https://sm.xmu.edu.cn/xueyuanxx/jwjl.htm" target="_blank">境外交流</a></li>
+											<li><a href="https://sm.xmu.edu.cn/xueyuanxx/djsz.htm" target="_blank">党建思政</a></li>
+											<li><a href="https://sm.xmu.edu.cn/xueyuanxx/rsxx.htm" target="_blank">人事信息</a></li>
+											<li><a href="https://sm.xmu.edu.cn/xueyuanxx/gzzd.htm" target="_blank">规章制度</a></li>
+											<li><a href="https://sm.xmu.edu.cn/xueyuanxx/xyyx.htm" target="_blank">学院影像</a></li>
+											<li><a href="https://sm.xmu.edu.cn/xueyuanxx/wjxz.htm" target="_blank">文件下载</a></li>
+										</ul>
+									</li>
+									<li><a href="#lxwm">联系我们</a>
+									</li>
+								</ul>
+							</nav>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3" align="center">
+				<div class="banner-container">
+					<div class="banner-img-container">
+						<img src="image/新建文件夹/guojijiaoliu(1).png" alt="">
+						<img src="image/新建文件夹/s_banner4.png" alt="">
+						<img src="image/新建文件夹/xueyuangaikuang.png" alt="">
+						<img src="image/新建文件夹/微信图片_20240313210424(1).png" alt="">
+						<img src="image/新建文件夹/微信图片_20240313210428(1).png" alt="">
+						<img src="image/新建文件夹/微信图片_20240313211903.png" alt="">
+					</div>
+				</div>
+			</td>
+		</tr>
+    </table>
+    <table  bgcolor="#013D86" height="50">
+        <tr>
+			<td><a href="#xygk">学院概况</a></td>
+            <td><a href="#djsz">党建思政</a></td>
+            <td><a href="#szdw">师资队伍</a></td>
+            <td><a href="#kxyj">科学研究</a></td>
+            <td><a href="#gjjl">国际交流</a></td>
+            <td><a href="http://smcareer.xmu.edu.cn/" target="_blank">职业发展</a></td>
+            <td><a href="http://sm-alumni.xmu.edu.cn/" target="_blank">校友联系</a></td>
+        </tr>
+	</table>
+	<div>
+        <h1 align="center" id="xygk"><a href="https://sm.xmu.edu.cn/xygk/xyjj.htm" target="_blank">——————学院概况——————</a></h1>
+        <table>
+            <tr>
+                <td><a href="https://sm.xmu.edu.cn/xygk/xyjj.htm" target="_blank"><span>学院简介</span></a></td>
+                <td><a href="https://sm.xmu.edu.cn/xygk/xyls.htm" target="_blank"><span>学院历史</span></a></td>
+                <td><a href="https://sm.xmu.edu.cn/xygk/yjysm.htm" target="_blank"><span>愿景使命</span></a></td>
+                <td><a href="https://sm.xmu.edu.cn/xygk/xyld.htm" target="_blank"><span>学院领导</span></a></td>
+                <td><a href="https://sm.xmu.edu.cn/xygk/xszx.htm" target="_blank"><span>系所中心</span></a></td>
+                <td><a href="https://sm.xmu.edu.cn/xygk/znbm.htm" target="_blank"><span>职能部门</span></a></td>
+                <td><a href="https://sm.xmu.edu.cn/xygk/bszn.htm" target="_blank"><span>办事指南</span></a></td>
+                <td><a href="https://sm.xmu.edu.cn/xygk/lxwm.htm" target="_blank"><span>联系我们</span></a></td>
+            </tr>
+        </table>
+		<hr color="#013D86" size="3">
+		<table width="100%">
+			<tr>
+				<td width="35%"><img src="image/c-bg-img11.png" alt="陈嘉庚"></td>
+			    <td width="65%" bgcolor="#FFFEFD"><p style="font-size: 20px; line-height: 2; padding: 50px; padding-bottom: 0px; padding-top: 0px;" align="left">&emsp; &emsp;厦门大学管理学科历史悠久，早在1921年厦门大学创建之初就成立了商学部。经百年岁月沧桑，厦门大学管理学院始终秉持校主陈嘉庚先生的爱国精神和“自强不息，止于至善”的校训，如今已经发展成为中国最具竞争力的十大商学院之一。</p></td>
+		    </tr>
+		</table>
+	    <br>
+		<table width="100%">
+			<tr>
+				<td width="65%" bgcolor="#FFFEFD">
+					<table>
+						<tr class="table-row">
+							<td width="10%"><p class="blue-background" style="font-size: 16px">2003<br>年</p></td>
+							<td><p style="font-size: 15px" align="left">全国工商管理一级学科的评估中</p>
+								<p style="font-size: 20px;font-weight: bold" align="center">厦门大学管理学院位列第三</p>
+							</td>
+						</tr>
+						<tr class="table-row">
+							<td width="10%"><p class="blue-background" style="font-size: 16px">2007<br>年</p></td>
+							<td><p style="font-size: 15px" align="left">厦门大学工商管理学科被教育部评为</p>
+								<p style="font-size: 20px;font-weight: bold" align="center">全国首批五个“工商管理一级学科国家重点学科”之一</p>
+							</td>
+						</tr>
+						<tr class="table-row">
+							<td width="10%"><p class="blue-background" style="font-size: 16px">2013<br>年</p></td>
+							<td><p style="font-size: 15px" align="left">教育部学科评估</p><p style="font-size: 20px;font-weight: bold" align="center">厦门大学工商管理一级学科在参评高校中位列全国第五</p></td>
+						</tr>
+						<tr class="table-row">
+							<td width="10%"><p class="blue-background" style="font-size: 16px">2017<br>年</p></td>
+							<td><p style="font-size: 15px" align="left">教育部公布的全国第四轮学科评估中</p><p style="font-size: 20px;font-weight: bold" align="center">厦门大学工商管理一级学科获评A类学科</p></td>
+						</tr>
+						<tr class="table-row">
+							<td width="10%"><p class="blue-background" style="font-size: 16px">2019<br>年</p></td>
+							<td><p style="font-size: 15px" align="left" >厦门大学经济学与商学进入</p><p style="font-size: 20px;font-weight: bold" align="center">厦门大学经济学与商学进入ESI全球前1%行列</p></td>
+						</tr>
+					</table>
+				</td>
+				<td width="35%"><img src="image/微信图片_20240313171531.jpg" height="200" alt="风景"></td>
+			</tr>
+		</table>
+    </div>
+    <div>
+        <h1 align="center" id="djsz"><a href="https://sm.xmu.edu.cn/xueyuanxx/djsz.htm" target="_blank">——————党建思政——————</a></h1>
+        <table>
+			<tr>
+                <td><a href="https://sm.xmu.edu.cn/xueyuanxx/djsz/chuxin.htm" target="_blank"><span>&ensp;初心&#32;·&#32;使命&ensp;</span></a></td>
+                <td><a href="https://sm.xmu.edu.cn/xueyuanxx/djsz/dsxx.htm" target="_blank"><span>&emsp;党史学习&emsp;</span></a></td>
+                <td><a href="https://sm.xmu.edu.cn/xueyuanxx/djsz/ztjyzl.htm" target="_blank"><span>主题教育专栏</span></a></td>
+            </tr>
+        </table>
+		<hr color="#013D86" size="3">
+		<table width="90%" background="image/图片1.png" style="background-size:100%; background-attachment: fixed">
+			<tr>
+				<td></td>
+				<td></td>
+				<td width="1%"></td>
+				<td><h2><p align="center" style="font-size: 50px; color: #013D86; font-family:'华文新魏'; padding-bottom: 0px">——风·采——</p></h2></td>
+			</tr>
+			<tr><td width="1%"></td>
+				<td width="25%" align="left" style="padding: 20px; padding-top: 0px; padding-bottom: 0px" bgcolor="#FFFEFD" class="expand-on-hover"><img src="image/2023年度本科生五四红旗团支部评选答辩暨团支书述职评议考核圆满完成.jpg" alt="2023年度本科生五四红旗团支部评选答辩暨团支书述职评议考核圆满完成" style="width:100%; height:auto"><br><br><a href="https://sm.xmu.edu.cn/info/1050/43294.htm" style="padding-top: 30px; font-size: 20px; padding-bottom: 20px; font-family:'楷体'; font-weight: bold" class="kongbai" target="_blank">2023年度本科生五四红旗团支部评选答辩<br>暨团支书述职评议考核圆满完成</a></td>
+				<td width="1%"></td>
+				<td width="25%" align="center" style="padding: 20px; padding-top: 0px" bgcolor="#FFFEFD" class="expand-on-hover"><br><br><img src="image/院地共建 志愿同行 ——厦门大学管理学院“情系滨海”志愿服务正式启动.jpg" alt="院地共建志愿同行——厦门大学管理学院“情系滨海”志愿服务正式启动" style="width:100%; height:auto"><br><br><a href="https://sm.xmu.edu.cn/info/1050/43034.htm" style="padding-top: 30px; font-size: 20px; padding-bottom: 20px; font-family:'楷体'; font-weight: bold" class="kongbai" target="_blank">院地共建 志愿同行&emsp;<br>——厦门大学管理学院“情系滨海”志愿服务正式启动</a></td>
+				<td width="1%"></td>
+				<td width="25%" align="right" style="padding: 20px; padding-top: 0px" bgcolor="#FFFEFD" class="expand-on-hover"><img src="image/管理学院召开全院宣传工作会议.jpg" alt="管理学院召开全院宣传工作会议" style="width:100%; height:auto;"><br><br><a href="https://sm.xmu.edu.cn/info/1050/42814.htm" style="padding-top: 30px; font-size: 20px; padding-bottom: 20px; font-family:'楷体'; font-weight: bold" class="kongbai" target="_blank">管理学院召开全院宣传工作会议</a></td>
+				<td width="1%"></td>
+			</tr>
+			<tr>
+				<td><br><br></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+    <div>
+		<h1 align="center" id="szdw"><a href="https://smr.xmu.edu.cn/TeacherWeb/Teacher_Special_2022.aspx" target="_blank">——————师资队伍——————</a></h1>
+		<table>
+            <tr>
+                <td><a href="https://smr.xmu.edu.cn/TeacherWeb/Teacher_Special_2022.aspx" target="_blank"><span>&emsp;师资队伍&emsp;</span></a></td>
+                <td><a href="https://sm.xmu.edu.cn/szdw/gjfwxz.htm" target="_blank"><span>国际访问学者</span></a></td>
+            </tr>
+        </table>
+		<hr color="#013D86" size="3">
+		<table>
+			<tr>
+				<td width="30%" bgcolor="#FFFEFD">
+					<table>
+						<tr style=" background-color: #EAEFF7"><td><p style="font-size: 20px; padding: 9px;">会计系</p></td></tr>
+						<tr><td><p style="font-size: 20px; padding: 9px;">MBA中心</p></td></tr>
+						<tr style=" background-color: #EAEFF7"><td><p style="font-size: 20px; padding: 9px;">企业管理系</p></td></tr>
+						<tr><td><p style="font-size: 20px; padding: 9px;">旅游与酒店管理系</p></td></tr>
+						<tr style=" background-color: #EAEFF7"><td><p style="font-size: 20px; padding: 9px;">管理科学系</p></td></tr>
+						<tr><td><p style="font-size: 20px; padding: 9px;">财务学系</p></td></tr>
+						<tr style=" background-color: #EAEFF7"><td><p style="font-size: 20px; padding: 9px;">市场学系</p></td></tr>
+						<tr><td><p style="font-size: 20px; padding: 9px;">中国能源政策研究院</p></td></tr>
+					</table>
+				</td>
+				<td></td>
+				<td bgcolor="#FFFEFD"><img src ="image/4444.png" alt="数据1"><p style="font-size: 20px; line-height: 2; padding: 30px; padding-bottom: 20px; padding-top: 20px;" align="left">&emsp;&emsp;厦门大学管理学院拥有一支国际化高水平的师资队伍，现有专任教师180余人，其中教授79人、副教授64人，70%以上的教师都曾经在欧美等地留学、进修或从事过研究工作。</p></td>
+				<td></td>
+				<td width="30%" bgcolor="#FFFEFD"><img src="image/屏幕截图 2024-03-14 102231.png" alt="数据2"></td>
+			</tr>
+		</table>
+    </div>
+    <div>
+        <h1 align="center" id="kxyj"><a href="https://sm.xmu.edu.cn/kxyj/kydt.htm" target="_blank">——————科学研究——————</a></h1>
+        <table>
+            <tr>
+                <td><a href="https://sm.xmu.edu.cn/kxyj/kydt.htm" target="_blank"><span>&emsp;&emsp;科研动态&emsp;&emsp;</span></a></td>
+                <td><a href="https://sm.xmu.edu.cn/kxyj/xshd.htm" target="_blank"><span>&emsp;&emsp;学术活动&emsp;&emsp;</span></a></td>
+                <td><a href="https://sm.xmu.edu.cn/kxyj/yjzx.htm" target="_blank"><span>&emsp;&emsp;研究中心&emsp;&emsp;</span></a></td>
+                <td><a href="https://smr.xmu.edu.cn" target="_blank"><span>师资科研管理系统</span></a></td>
+            </tr>
+        </table>
+		<hr color="#013D86" size="3">
+		<table width="90%" background="image/图片1.png" style="background-size:100%; background-attachment: fixed">
+			<tr>
+				<td></td>
+				<td></td>
+				<td width="1%"></td>
+				<td><h2><p align="center" style="font-size: 50px; color: #013D86; font-family:'华文新魏'; padding-bottom: 0px">—科研新闻—</p></h2></td>
+			</tr>
+			<tr>
+				<td width="1%"></td>
+				<td width="25%" align="left" style="padding: 20px; padding-top: 0px; padding-bottom: 0px" bgcolor="#FFFEFD" class="expand-on-hover"><img src="image/屏幕截图 2024-03-14 193219(1)(1)(1).png" alt="厦门大学管理学院新商科海外名师前沿讲堂之十二——洞察全球挑战，探索应对策略" style="width:100%; height:auto"><br><a href="https://sm.xmu.edu.cn/info/1585/43284.htm" style="padding-top: 30px; font-size: 20px; padding-bottom: 20px; font-family:'楷体'; font-weight: bold" class="kongbai" target="_blank">厦门大学管理学院新商科海外名师前沿讲堂之十二——洞察全球挑战，探索应对策略</a></td>
+				<td width="1%"></td>
+				<td width="25%" align="center" style="padding: 20px; padding-top: 0px" bgcolor="#FFFEFD" class="expand-on-hover"><br><img src="image/640.png" alt="管理学院陈苏助理教授合作论文在Journal of Applied Psychology发表" style="width:100%; height:auto"><br><br><a href="https://mp.weixin.qq.com/s/S9ffwNLAugTauo1zn8uK5Q" style="padding-top: 30px; font-size: 20px; padding-bottom: 20px; font-family:'楷体'; font-weight: bold" class="kongbai" target="_blank">管理学院陈苏助理教授合作论文在Journal of Applied Psychology发表</a></td>
+				<td width="1%"></td>
+				<td width="25%" align="right" style="padding: 20px; padding-top: 0px" bgcolor="#FFFEFD" class="expand-on-hover"><br><img src="image/640 (1).png" alt="管理学院市场学系余天娇助理教授在国际顶级期刊Journal of Consumer Research上发表论文" style="width:100%; height:auto;"><br><a href="https://mp.weixin.qq.com/s?__biz=MzI5MDAwMDUyMQ==&mid=2650880359&idx=1&sn=06b1cf2f3adb98a46d043674effd7efd&chksm=f7d30281c0a48b9724ac6baab7f179dac6586997e842022e9c188a2fd55fd53fbed5d9936864&token=2108084320&lang=zh_CN#rd" style="padding-top: 30px; font-size: 20px; padding-bottom: 20px; font-family:'楷体'; font-weight: bold" class="kongbai" target="_blank">管理学院市场学系余天娇助理教授在国际顶级期刊Journal of Consumer Research上发表论文</a></td>
+				<td width="1%"></td>
+			</tr>
+			<tr>
+				<td><br><br></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td width="65%" bgcolor="#FFFEFD">
+					<table>
+						<tr>
+							<td><a href="https://mp.weixin.qq.com/s/Xfb-FgbCMS76xew-j1AW7w" target="_blank" style="background: none; color: #013D86; font-size: 30px;">——管理学院2023年度学术盘点——</a></td>
+						</tr>
+						<tr>
+							<td><p style="font-size: 20px; line-height: 2; padding: 50px; padding-bottom: 0px; padding-top: 0px;" align= "left">  &emsp;&emsp;2023年，学院新立项课题64项，其中国家级课题22项，包括国家社科基金重大项目1项、国家社科基金后期资助重点项目1项。学院教师共登记学术论文343篇，其中国际A+类刊物论文8篇、国际A类刊物论文19篇、中文最优刊物论文24篇等。出版著作14部。14项科研成果获评福建省第十五届社会科学优秀成果奖，其中一等奖2项。举办各类学术会议31场，其中国际会议3场、国内会议28场；举办学术讲座173场，其中校外专家学术讲座127场。</p></td>
+						</tr>
+					</table>
+				</td>
+				<td><img src="image/66DAD3E8F6024E2FE1340048EF7_EDFD18C3_22C78.jpg" alt=""></td>
+			</tr>
+		</table>
+	</div>
+    <div>
+        <h1 align="center" id="gjjl"><a href="https://sm.xmu.edu.cn/gjjl/gjhgk/gjhgk.htm" target="_blank">——————国际交流——————</a></h1>
+		<table>
+            <tr>
+                <td><a href="https://sm.xmu.edu.cn/gjjl/gjhgk.htm" target="_blank"><span>&ensp;国际化概况&ensp;</span></a></td>
+                <td><a href="https://sm.xmu.edu.cn/gjjl/gjrz.htm" target="_blank"><span>&emsp;国际认证&emsp;</span></a></td>
+                <td><a href="https://sm.xmu.edu.cn/gjjl/gjhdt.htm" target="_blank"><span>&ensp;国际化动态&ensp;</span></a></td>
+                <td><a href="https://sm.xmu.edu.cn/gjjl/xsjlxm.htm" target="_blank"><span>学生交流项目</span></a></td>
+                <td><a href="https://sm.xmu.edu.cn/gjjl/lhpy.htm" target="_blank"><span>&emsp;联合培养&emsp;</span></a></td>
+                <td><a href="https://sm.xmu.edu.cn/gjjl/gjxs.htm" target="_blank"><span>&emsp;国际学生&emsp;</span></a></td>
+                <td><a href="https://sm.xmu.edu.cn/gjjl/cg_j_zn.htm" target="_blank"><span>出国出境指南</span></a></td>
+                <td><a href="https://sm.xmu.edu.cn/gjjl/lxwsb.htm" target="_blank"><span>&ensp;联系外事办&ensp;</span></a></td>
+            </tr>
+        </table>
+		<hr color="#013D86" size="3">
+    </div>
+	<div class="last">
+		<table background="image/微信图片_20240316211732.jpg" style="background-position:bottom">
+			<tr>
+				<td><br></td>
+			</tr>
+			<tr style="padding-bottom: 0px">
+				<td width="30%"><p id="lxwm" align="left" style=" font-size: 20px;" >——联系我们</p></td>
+				<td width="20%"><p align="left" style="font-size: 20px; ">——学校链接</p></td>
+				<td width="20%"></td>
+				<td width="30%"><p align="left" style=" font-size: 20px; ">——友情链接</p></td></tr>
+			<tr>
+				<td align="left"><a href="#" target="_blank">|&emsp;地 址：福建省厦门市厦门大学保欣丽英楼</a></td>
+				<td><a href="https://www.xmu.edu.cn/" target="_blank">|&emsp;厦门大学</a></td>
+				<td><a href="https://skc.xmu.edu.cn/main.htm" target="_blank">|&emsp;厦门大学社会科学研究处</a></td>
+				<td><a href="http://www.moe.gov.cn/" target="_blank">|&emsp;中华人民共和国教育部</a></td>
+			</tr>
+			<tr>
+				<td><a href="#" target="_blank">|&emsp;邮 编：361005</a></td>
+				<td><a href="https://ifas.xmu.edu.cn/" target="_blank">|&emsp;财务管理与会计研究院</a></td><td><a href="https://zs.xmu.edu.cn/" target="_blank">|&emsp;厦门大学招生办公室</a></td><td><a href="https://www.mof.gov.cn/index.htm" target="_blank">|&emsp;中华人民共和国财政部</a></td>
+			</tr>
+			<tr>
+				<td><a href="#" target="_blank">|&emsp;邮 箱：sm@xmu.edu.cn</a></td>
+				<td><a href="https://library.xmu.edu.cn/" target="_blank">|&emsp;厦门大学图书馆</a></td>
+				<td><a href="https://gs.xmu.edu.cn/" target="_blank">|&emsp;厦门大学研究生院</a></td>
+				<td><a href="http://www.nopss.gov.cn/" target="_blank">|&emsp;全国哲学社会科学工作办公室</a></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><a href="https://office.xmu.edu.cn/" target="_blank">|&emsp;厦门大学办公室</a></td>
+				<td><a href="https://jwc.xmu.edu.cn/" target="_blank">|&emsp;厦门大学教务处</a></td>
+				<td><a href="https://smr.xmu.edu.cn/" target="_blank">|&emsp;管理学院师资科研管理系统</a></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><a href="https://std.xmu.edu.cn/main.htm" target="_blank">|&emsp;厦门大学科学技术处</a></td>
+				<td><a href="https://rsc.xmu.edu.cn/main.htm" target="_blank">|&emsp;厦门大学人事处</a></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><br><br><br><br><br><br><br><br><br></td>
+			</tr>
+		</table>
+		<table width="100%" align="center" bgcolor="#013D86" id="bottom">
+			<tr>
+				<td height="80" width="15%"><img src="image/f_icon01.png" alt=""></td>
+				<td height="80" width="10%"><img src="image/f_icon02.png" alt=""></td>
+				<td height="80" width="16%"><img src="image/f_icon03.png" alt=""></td>
+				<td><p align="right" style="padding-right: 20px; color: #FFFEFD">CopyRight ©2024 厦门大学管理学院 版权所有 技术支持：胡一凡</p></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
